@@ -11,6 +11,14 @@
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Data" t="Include">
+          <e p="AppContext.cs" t="Include" />
+        </e>
+        <e p="Migrations" t="Include">
+          <e p="20201103135020_initial.cs" t="Include" />
+          <e p="20201103135020_initial.Designer.cs" t="Include" />
+          <e p="AppContextModelSnapshot.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
