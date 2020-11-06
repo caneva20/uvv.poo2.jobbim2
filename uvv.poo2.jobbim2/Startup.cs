@@ -1,4 +1,5 @@
 using ajj.Data;
+using ajj.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -18,9 +19,15 @@ namespace ajj {
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services) {
+            var connectionString = new ConnectionStrings {
+                Default = Configuration.GetConnectionString("DefaultConnection"),
+            };
+
             services.AddDbContext<AppContext>(options => {
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+                options.UseSqlServer(connectionString.Default);
             });
+
+            services.AddSingleton(connectionString);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
