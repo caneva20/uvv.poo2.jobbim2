@@ -8,7 +8,7 @@ using ajj.Data;
 
 namespace ajj.Migrations
 {
-    [DbContext(typeof(AppContext))]
+    [DbContext(typeof(Context))]
     [Migration("20201103135020_initial")]
     partial class initial
     {

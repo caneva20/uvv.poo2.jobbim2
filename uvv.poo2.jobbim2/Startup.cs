@@ -23,7 +23,7 @@ namespace ajj {
                 Default = Configuration.GetConnectionString("DefaultConnection"),
             };
 
-            services.AddDbContext<AppContext>(options => {
+            services.AddDbContext<Context>(options => {
                 options.UseSqlServer(connectionString.Default);
             });
 

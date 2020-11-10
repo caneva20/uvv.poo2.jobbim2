@@ -7,7 +7,7 @@ using ajj.Data;
 
 namespace ajj.Migrations
 {
-    [DbContext(typeof(AppContext))]
+    [DbContext(typeof(Context))]
     partial class AppContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
