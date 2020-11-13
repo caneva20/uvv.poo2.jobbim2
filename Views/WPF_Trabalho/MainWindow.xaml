@@ -1,0 +1,18 @@
+﻿<Window x:Class="WPF_Trabalho.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Trabalho"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="1239.485">
+    <Grid>
+        <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top">
+            <Button Content="Inscrição" MinWidth="100" Click="BtnClickInscricao"></Button>
+            <Button Content="Curso" MinWidth="100" Margin="10,0,0,0" Click="BtnClickCurso"></Button>
+            <Button Content="Oferta" MinWidth="100" Margin="10,0,0,0" Click="BtnClickOferta"></Button>
+            <Button Content="Funcionário" MinWidth="100" Margin="10,0,0,0" Click="BtnClickFuncionario"></Button>
+        </StackPanel>
+        <Frame x:Name="Main" Margin="0,35,0,0" NavigationUIVisibility="Hidden"></Frame>
+    </Grid>
+</Window>
