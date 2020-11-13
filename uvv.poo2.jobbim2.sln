@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uvv.poo2.jobbim2", "uvv.poo2.jobbim2\uvv.poo2.jobbim2.csproj", "{D1BC0C2F-D89C-4A45-ADCC-4344B7605AF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uvv.poo2.ui", "uvv.poo2.ui\uvv.poo2.ui.csproj", "{BAD13B92-5D86-4087-BDCE-4552C6149683}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{D1BC0C2F-D89C-4A45-ADCC-4344B7605AF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1BC0C2F-D89C-4A45-ADCC-4344B7605AF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1BC0C2F-D89C-4A45-ADCC-4344B7605AF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAD13B92-5D86-4087-BDCE-4552C6149683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAD13B92-5D86-4087-BDCE-4552C6149683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAD13B92-5D86-4087-BDCE-4552C6149683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAD13B92-5D86-4087-BDCE-4552C6149683}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
