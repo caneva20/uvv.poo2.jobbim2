@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:WPF_Trabalho"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Curso_Page" Height="450" Width="1516.4">
+      Title="Curso_Page" Height="450" Width="1000">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -15,8 +15,7 @@
         </Grid.ColumnDefinitions>
         <Frame x:Name="Curso" Background="White"></Frame>
         <Button x:Name="button_criar" Content="Criar Curso" HorizontalAlignment="Left" Margin="99,302,0,0" VerticalAlignment="Top" Width="106" Height="33"/>
-        <Button x:Name="button_buscar" Content="Buscar" HorizontalAlignment="Left" Margin="627,107,0,0" VerticalAlignment="Top" Width="106" Height="29"/>
-        <TextBlock x:Name="texto_curso" HorizontalAlignment="Left" Height="43" Margin="725,10,0,0" TextWrapping="Wrap" Text="CURSO" VerticalAlignment="Top" Width="123" FontStyle="Normal" FontWeight="ExtraBold" FontSize="32" RenderTransformOrigin="0.201,0.517"/>
+        <TextBlock x:Name="texto_curso" HorizontalAlignment="Left" Height="43" Margin="441,10,0,0" TextWrapping="Wrap" Text="CURSO" VerticalAlignment="Top" Width="123" FontStyle="Normal" FontWeight="ExtraBold" FontSize="32" RenderTransformOrigin="0.201,0.517"/>
         <TextBox x:Name="input_Nome_Curso" HorizontalAlignment="Left" Height="29" Margin="142,114,0,0" TextWrapping="Wrap" Text="Nome_Curso" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325"/>
         <Label x:Name="label_nomeCurso" Content="Nome do Curso:" HorizontalAlignment="Left" Height="29" Margin="10,114,0,0" VerticalAlignment="Top" Width="132"/>
         <TextBox x:Name="input_Nome_Curso_Copy" HorizontalAlignment="Left" Height="29" Margin="142,152,0,0" TextWrapping="Wrap" Text="Ementa_Curso" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325"/>
@@ -24,23 +23,19 @@
         <TextBox x:Name="input_CargaHor_Curso" HorizontalAlignment="Left" Height="29" Margin="142,186,0,0" TextWrapping="Wrap" Text="CargaHor_Curso" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325"/>
         <Label x:Name="label_cargaHoraria" Content="Carga Hor. do Curso:" HorizontalAlignment="Left" Height="29" Margin="10,186,0,0" VerticalAlignment="Top" Width="132"/>
         <GridSplitter HorizontalAlignment="Left" Height="283" Margin="335,77,0,0" VerticalAlignment="Top" Width="1" Background="#FF030303" BorderBrush="Black"/>
-        <TextBox x:Name="input_Nome_Curso_buscar" HorizontalAlignment="Left" Height="29" Margin="455,107,0,0" TextWrapping="Wrap" Text="Nome_Curso" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325"/>
-        <Label x:Name="label_buscarCurso" Content="Buscar Curso:" HorizontalAlignment="Left" Height="29" Margin="365,107,0,0" VerticalAlignment="Top" Width="132"/>
-        <ListBox x:Name="lista_Cursos" HorizontalAlignment="Left" Height="208" Margin="414,152,0,0" VerticalAlignment="Top" Width="200" BorderBrush="#FF111112"/>
-        <GridSplitter HorizontalAlignment="Left" Height="283" Margin="786,77,0,0" VerticalAlignment="Top" Width="1" Background="#FF030303" BorderBrush="Black"/>
-        <Label x:Name="label_Curso_update" Content="Curso" HorizontalAlignment="Left" Height="29" Margin="827,103,0,0" VerticalAlignment="Top" Width="132"/>
-        <Button x:Name="button_update" Content="Atualizar Curso" HorizontalAlignment="Left" Margin="917,302,0,0" VerticalAlignment="Top" Width="106" Height="33"/>
-        <TextBox x:Name="input_Nome_Curso_update" HorizontalAlignment="Left" Height="29" Margin="959,163,0,0" TextWrapping="Wrap" Text="Nome_Curso" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325"/>
-        <Label x:Name="label_nomeCurso_update" Content="Nome do Curso:" HorizontalAlignment="Left" Height="29" Margin="827,163,0,0" VerticalAlignment="Top" Width="132"/>
-        <TextBox x:Name="input_Nome_Curso_update1" HorizontalAlignment="Left" Height="29" Margin="959,201,0,0" TextWrapping="Wrap" Text="Ementa_Curso" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325"/>
-        <Label x:Name="label_ementaCurso_update" Content="Ementa do Curso:" HorizontalAlignment="Left" Height="29" Margin="827,201,0,0" VerticalAlignment="Top" Width="132"/>
-        <TextBox x:Name="input_CargaHor_Curso_update" HorizontalAlignment="Left" Height="29" Margin="959,235,0,0" TextWrapping="Wrap" Text="CargaHor_Curso" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325"/>
-        <Label x:Name="label_cargaHoraria_update" Content="Carga Hor. do Curso:" HorizontalAlignment="Left" Height="29" Margin="827,235,0,0" VerticalAlignment="Top" Width="132"/>
-        <GridSplitter HorizontalAlignment="Left" Height="283" Margin="1153,77,0,0" VerticalAlignment="Top" Width="1" Background="#FF030303" BorderBrush="Black"/>
-        <Label x:Name="label_Curso_delete" Content="Código do Curso" HorizontalAlignment="Left" Height="29" Margin="1176,107,0,0" VerticalAlignment="Top" Width="132"/>
-        <Button x:Name="button_delete" Content="Deletar Curso" HorizontalAlignment="Left" Margin="1275,302,0,0" VerticalAlignment="Top" Width="106" Height="33"/>
-        <ComboBox x:Name="lista_cursos_update" HorizontalAlignment="Left" Margin="964,114,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="lista_cursos_delete" HorizontalAlignment="Left" Margin="1313,107,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label_Curso_update" Content="Curso" HorizontalAlignment="Left" Height="29" Margin="368,103,0,0" VerticalAlignment="Top" Width="132"/>
+        <Button x:Name="button_update" Content="Atualizar Curso" HorizontalAlignment="Left" Margin="458,302,0,0" VerticalAlignment="Top" Width="106" Height="33"/>
+        <TextBox x:Name="input_Nome_Curso_update" HorizontalAlignment="Left" Height="29" Margin="501,163,0,0" TextWrapping="Wrap" Text="Nome_Curso" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325"/>
+        <Label x:Name="label_nomeCurso_update" Content="Nome do Curso:" HorizontalAlignment="Left" Height="29" Margin="368,163,0,0" VerticalAlignment="Top" Width="132"/>
+        <TextBox x:Name="input_Nome_Curso_update1" HorizontalAlignment="Left" Height="29" Margin="501,201,0,0" TextWrapping="Wrap" Text="Ementa_Curso" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325"/>
+        <Label x:Name="label_ementaCurso_update" Content="Ementa do Curso:" HorizontalAlignment="Left" Height="29" Margin="368,201,0,0" VerticalAlignment="Top" Width="132"/>
+        <TextBox x:Name="input_CargaHor_Curso_update" HorizontalAlignment="Left" Height="29" Margin="501,235,0,0" TextWrapping="Wrap" Text="CargaHor_Curso" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325"/>
+        <Label x:Name="label_cargaHoraria_update" Content="Carga Hor. do Curso:" HorizontalAlignment="Left" Height="29" Margin="368,235,0,0" VerticalAlignment="Top" Width="132"/>
+        <GridSplitter HorizontalAlignment="Left" Height="283" Margin="666,77,0,0" VerticalAlignment="Top" Width="1" Background="#FF030303" BorderBrush="Black"/>
+        <Label x:Name="label_Curso_delete" Content="Código do Curso" HorizontalAlignment="Left" Height="29" Margin="689,107,0,0" VerticalAlignment="Top" Width="132"/>
+        <Button x:Name="button_delete" Content="Deletar Curso" HorizontalAlignment="Left" Margin="788,302,0,0" VerticalAlignment="Top" Width="106" Height="33"/>
+        <ComboBox x:Name="lista_cursos_update" HorizontalAlignment="Left" Margin="505,114,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="lista_cursos_delete" HorizontalAlignment="Left" Margin="826,107,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Page>
