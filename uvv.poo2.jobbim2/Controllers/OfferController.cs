@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using ajj.Data;
 using ajj.DTOs;
 using ajj.Models;
@@ -16,17 +17,16 @@ namespace ajj.Controllers
             _context = context;
         }
         
-        [HttpGet("{id}")]
-        public ActionResult<Offer> GetOffer(long id)
+        [HttpGet("{courseId}")]
+        public ActionResult<IEnumerable<Offer>> GetOffers(long courseId)
         {
-            return Ok("aleatorio");
-            var offer = _context.Offers.SingleOrDefault(x => x.Id == id);
-            if (offer == null)
+            var course = _context.Courses.SingleOrDefault(x => x.Id == courseId);
+            if (course == null)
             {
                 return NotFound("Offer not found");
             }
 
-            return offer;
+            return _context.Offers.Where(x => x.Course == course).ToList();
         }
 
         [HttpPost()]

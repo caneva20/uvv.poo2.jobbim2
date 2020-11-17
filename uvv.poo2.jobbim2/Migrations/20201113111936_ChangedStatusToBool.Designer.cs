@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ajj.Data;
 
 namespace ajj.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class AppContextModelSnapshot : ModelSnapshot
+    [Migration("20201113111936_ChangedStatusToBool")]
+    partial class ChangedStatusToBool
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,11 +31,8 @@ namespace ajj.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Program")
+                    b.Property<string>("Workload")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Workload")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

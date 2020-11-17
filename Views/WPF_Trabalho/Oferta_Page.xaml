@@ -19,14 +19,14 @@
         <Label x:Name="label_NomeCurso_buscar" Content="Nome do Curso:" HorizontalAlignment="Left" Height="29" Margin="366,108,0,0" VerticalAlignment="Top" Width="132"/>
         <ListBox x:Name="lista_Cursos_Oferta" HorizontalAlignment="Left" Height="184" Margin="431,150,0,0" VerticalAlignment="Top" Width="200" BorderBrush="#FF111112"/>
         <GridSplitter HorizontalAlignment="Left" Height="283" Margin="344,81,0,0" VerticalAlignment="Top" Width="1" Background="#FF030303" BorderBrush="Black"/>
-        <Label x:Name="label_NomeCurso_suspender" Content="Nome do Curso:" HorizontalAlignment="Left" Height="29" Margin="876,155,0,0" VerticalAlignment="Top" Width="132"/>
+        <Label x:Name="label_Oferta_suspender" Content="Oferta" HorizontalAlignment="Left" Height="29" Margin="876,155,0,0" VerticalAlignment="Top" Width="132"/>
         <Button x:Name="button_suspenderOferta" Content="Suspender Oferta" HorizontalAlignment="Left" Margin="876,215,0,0" VerticalAlignment="Top" Width="106" Height="33"/>
         <Button x:Name="button_abrirOferta" Content="Abrir Oferta" HorizontalAlignment="Left" Margin="132,301,0,0" VerticalAlignment="Top" Width="106" Height="33"/>
         <Button x:Name="button_cancelarOferta" Content="Cancelar Oferta" HorizontalAlignment="Left" Margin="1035,214,0,0" VerticalAlignment="Top" Width="106" Height="33"/>
         <GridSplitter HorizontalAlignment="Left" Height="283" Margin="824,81,0,0" VerticalAlignment="Top" Width="1" Background="#FF030303" BorderBrush="Black"/>
         <TextBlock x:Name="texto_Oferta" HorizontalAlignment="Left" Height="43" Margin="531,10,0,0" TextWrapping="Wrap" Text="OFERTA" VerticalAlignment="Top" Width="135" FontStyle="Normal" FontWeight="ExtraBold" FontSize="32"/>
         <ComboBox x:Name="lista_cursos_buscar" HorizontalAlignment="Left" Margin="485,108,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="lista_cursos_suspender" HorizontalAlignment="Left" Margin="996,155,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="lista_oferta_suspender" HorizontalAlignment="Left" Margin="996,155,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="lista_cursos_abrir" HorizontalAlignment="Left" Margin="178,226,0,0" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Page>

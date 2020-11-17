@@ -2,11 +2,9 @@
 
 namespace ajj.Models {
     public enum OfferStatus {
-        Closed,
-        Open,
-        Suspended,
-        Canceled,
-        Finished
+        Open = 0,
+        Suspended = 1,
+        Canceled = 2,
     }
     public class Offer {
         public long Id { get; set; }
