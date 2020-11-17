@@ -1,45 +1,42 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using ajj.Data;
 using ajj.DTOs;
 using ajj.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ajj.Controllers
-{
-    [Route("[controller]")][ApiController]
-    public class OfferController : ControllerBase
-    {
+namespace ajj.Controllers {
+    [Route("[controller]")]
+    [ApiController]
+    public class OfferController : ControllerBase {
         private readonly Context _context;
 
-        public OfferController(Context context)
-        {
+        public OfferController(Context context) {
             _context = context;
         }
-        
+
         [HttpGet("{courseId}")]
-        public ActionResult<IEnumerable<Offer>> GetOffers(long courseId)
-        {
+        public ActionResult<IEnumerable<Offer>> GetOffers(long courseId) {
             var course = _context.Courses.SingleOrDefault(x => x.Id == courseId);
-            if (course == null)
-            {
+            if (course == null) {
                 return NotFound("Offer not found");
             }
 
-            return _context.Offers.Where(x => x.Course == course).ToList();
+            var result = _context.Offers.Where(x => x.Course == course)
+               .ToList();
+            
+            return result;
         }
 
         [HttpPost()]
-        public IActionResult CreateOffer([FromBody]OfferDTO dto)
-        {
-            var course = _context.Courses.SingleOrDefault(x=> x.Id == dto.CourseId);
-            if (course == null)
-            {
+        public IActionResult CreateOffer([FromBody] OfferDTO dto) {
+            var course = _context.Courses.SingleOrDefault(x => x.Id == dto.CourseId);
+            if (course == null) {
                 return NotFound("Course not found");
             }
 
-            var offer = new Offer
-            {
+            var offer = new Offer {
                 Course = course,
                 Status = dto.Status,
                 EndDate = dto.EndDate,
@@ -48,21 +45,19 @@ namespace ajj.Controllers
 
             _context.Add(offer);
             _context.SaveChanges();
-            
+
             return Ok();
         }
 
         [HttpPost("{id}")]
-        public IActionResult UpdateStatus(long id, [FromBody] OfferStatusDTO dto)
-        {
+        public IActionResult UpdateStatus(long id, [FromBody] OfferStatusDTO dto) {
             var offer = _context.Offers.SingleOrDefault(x => x.Id == id);
-            if (offer == null)
-            {
+            if (offer == null) {
                 return NotFound("Offer not found");
             }
 
             offer.Status = dto.Status;
-            
+
             _context.Update(offer);
             _context.SaveChanges();
 
