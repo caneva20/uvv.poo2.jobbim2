@@ -6,44 +6,36 @@ using ajj.DTOs;
 using ajj.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ajj.Controllers
-{
+namespace ajj.Controllers {
     [Route("[controller]")]
     [ApiController]
-    public class EmployeeController : ControllerBase
-    {
+    public class EmployeeController : ControllerBase {
         private readonly Context _context;
 
-        public EmployeeController(Context context)
-        {
+        public EmployeeController(Context context) {
             _context = context;
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Employee> GetEmployees(long id)
-        {
+        public ActionResult<Employee> GetEmployees(long id) {
             var employee = _context.Employees.SingleOrDefault(x => x.Id == id);
-            if (employee == null)
-            {
+            if (employee == null) {
                 return NotFound("Employee not found");
             }
 
             return employee;
         }
 
-        [HttpGet("{id}")]
-        [ActionName("courses")]
-        public ActionResult<IEnumerable<Course>> GetEmployeesCourses(long id)
-        {
+        [HttpGet("course/{id}")]
+        public ActionResult<IEnumerable<Course>> GetEmployeesCourses(long id) {
             var employee = _context.Employees.SingleOrDefault(x => x.Id == id);
-            if (employee == null)
-            {
+            if (employee == null) {
                 return NotFound("Employee not found");
             }
 
             var employeeCourses = new List<Course>();
-            foreach (var subscription in _context.Subscriptions.Where(x => x.Employee == employee))
-            {
+            foreach (var subscription in _context.Subscriptions.Where(x => x.Employee == employee)
+            ) {
                 employeeCourses.Add(subscription.Course);
             }
 
@@ -51,10 +43,8 @@ namespace ajj.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateEmployee([FromBody] EmployeeDTO dto)
-        {
-            var employee = new Employee()
-            {
+        public IActionResult CreateEmployee([FromBody] EmployeeDTO dto) {
+            var employee = new Employee() {
                 Name = dto.Name,
                 AdmissionDate = dto.AdmissionDate,
             };
@@ -66,11 +56,9 @@ namespace ajj.Controllers
         }
 
         [HttpPost("{id}")]
-        public IActionResult TerminateContract(long id)
-        {
+        public IActionResult TerminateContract(long id) {
             var employee = _context.Employees.SingleOrDefault(x => x.Id == id);
-            if (employee == null)
-            {
+            if (employee == null) {
                 return NotFound("Employee not found");
             }
 
