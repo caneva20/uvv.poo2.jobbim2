@@ -16,8 +16,13 @@ namespace ajj.Controllers {
             _context = context;
         }
 
+        [HttpGet]
+        public ActionResult<IEnumerable<Employee>> GetEmployees() {
+            return _context.Employees.ToList();
+        }
+
         [HttpGet("{id}")]
-        public ActionResult<Employee> GetEmployees(long id) {
+        public ActionResult<Employee> GetEmployee(long id) {
             var employee = _context.Employees.SingleOrDefault(x => x.Id == id);
             if (employee == null) {
                 return NotFound("Employee not found");

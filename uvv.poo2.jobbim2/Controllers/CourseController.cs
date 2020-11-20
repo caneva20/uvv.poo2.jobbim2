@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ajj.Dtos;
 using ajj.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -12,6 +13,32 @@ namespace ajj.Controllers {
 
         public CourseController(ConnectionStrings strings) {
             _strings = strings;
+        }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<Course>> GetAll() {
+            using var connection = CreateConnection();
+
+            const string QUERY = "SELECT * FROM courses";
+            var command = new SqlCommand(QUERY, connection);
+
+            connection.Open();
+            using var reader = command.ExecuteReader();
+
+            var list = new List<Course>();
+
+            if (reader.HasRows) {
+                while (reader.Read()) {
+                    list.Add(new Course {
+                        Id = reader.GetInt64(0),
+                        Name = reader.GetString(1),
+                        Program = reader.IsDBNull(2) ? null : reader.GetString(2),
+                        Workload = reader.GetInt32(3),
+                    });
+                }
+            }
+
+            return list;
         }
 
         [HttpGet("{id}")]
