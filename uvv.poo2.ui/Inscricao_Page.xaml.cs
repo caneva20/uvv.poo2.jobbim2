@@ -24,5 +24,19 @@ namespace WPF_Trabalho
         {
             InitializeComponent();
         }
+
+        private void criarInscricao(object sender, RoutedEventArgs e)
+        {
+            ComboBoxItem typeItemCurso = (ComboBoxItem)lista_cursos.SelectedItem;
+            ComboBoxItem typeItemFuncionario = (ComboBoxItem)lista_funcionarios.SelectedItem;
+            string curso = typeItemCurso.Content.ToString();
+            string funcionario = typeItemFuncionario.Content.ToString();
+        }
+
+        private void cancelarInscricao(object sender, RoutedEventArgs e)
+        {
+            ComboBoxItem typeItem = (ComboBoxItem)lista_inscricao.SelectedItem;
+            string value = typeItem.Content.ToString();
+        }
     }
 }

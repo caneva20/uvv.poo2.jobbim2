@@ -20,9 +20,39 @@ namespace WPF_Trabalho
     /// </summary>
     public partial class Oferta_Page : Page
     {
+        string strDataInicial;
+        string strDataFinal;
+        string strSituacaoOferta;
         public Oferta_Page()
         {
             InitializeComponent();
+        }
+
+        private void abrirOferta(object sender, RoutedEventArgs e)
+        {
+            strDataInicial = input_DataFinal.Text;
+            strDataFinal = input_DataFinal.Text;
+            strSituacaoOferta = input_situacaoOferta.Text;
+            ComboBoxItem typeItem = (ComboBoxItem)lista_cursos_abrir.SelectedItem;
+            string value = typeItem.Content.ToString();
+        }
+
+        private void buscarOferta(object sender, RoutedEventArgs e)
+        {
+            ComboBoxItem typeItem = (ComboBoxItem)lista_cursos_buscar.SelectedItem;
+            string value = typeItem.Content.ToString();
+        }
+
+        private void suspenderOferta(object sender, RoutedEventArgs e)
+        {
+            ComboBoxItem typeItem = (ComboBoxItem)lista_oferta_suspender.SelectedItem;
+            string value = typeItem.Content.ToString();
+        }
+
+        private void cancelarOferta(object sender, RoutedEventArgs e)
+        {
+            ComboBoxItem typeItem = (ComboBoxItem)lista_oferta_suspender.SelectedItem;
+            string value = typeItem.Content.ToString();
         }
     }
 }

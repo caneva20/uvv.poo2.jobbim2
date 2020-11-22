@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Funcionario_Window" Height="450" Width="1197.91" Background="White">
     <Grid>
-        <Button x:Name="button_criar" Content="Novo Funcionário" HorizontalAlignment="Left" Margin="99,302,0,0" VerticalAlignment="Top" Width="106" Height="33"/>
+        <Button x:Name="button_criar" Content="Novo Funcionário" HorizontalAlignment="Left" Margin="99,302,0,0" VerticalAlignment="Top" Width="106" Height="33" Click="criarFuncionario"/>
         <TextBox x:Name="input_Nome_Funcionario" HorizontalAlignment="Left" Height="29" Margin="142,114,0,0" TextWrapping="Wrap" Text="Nome_Funcionário" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325"/>
         <Label x:Name="label_nomeFuncionario" Content="Nome do Funcionário:" HorizontalAlignment="Left" Height="29" Margin="10,114,0,0" VerticalAlignment="Top" Width="132"/>
         <TextBox x:Name="input_Data_Admissao" HorizontalAlignment="Left" Height="29" Margin="142,152,0,0" TextWrapping="Wrap" Text="Data_Admissao" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325"/>
@@ -32,9 +32,9 @@
         <GridSplitter HorizontalAlignment="Left" Height="283" Margin="917,76,0,0" VerticalAlignment="Top" Width="1" Background="#FF030303" BorderBrush="Black"/>
         <Label x:Name="label_Funcionario_encerrar" Content="Funcionário:" HorizontalAlignment="Left" Height="29" Margin="949,181,0,0" VerticalAlignment="Top" Width="83" RenderTransformOrigin="0.43,-0.267"/>
         <ComboBox x:Name="lista_funcionarios_encerrar" HorizontalAlignment="Left" Margin="1032,186,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button_buscar_curso" Content="OK" HorizontalAlignment="Left" Margin="565,90,0,0" VerticalAlignment="Top" Width="25" Height="33" RenderTransformOrigin="1.349,0.569"/>
-        <Button x:Name="button_buscar_funcionario" Content="OK" HorizontalAlignment="Left" Margin="865,84,0,0" VerticalAlignment="Top" Width="25" Height="33" RenderTransformOrigin="1.349,0.569"/>
-        <Button x:Name="button_encerrar" Content="Encerrar Contrato" HorizontalAlignment="Left" Margin="1003,302,0,0" VerticalAlignment="Top" Width="106" Height="33"/>
+        <Button x:Name="button_buscar_curso" Content="OK" HorizontalAlignment="Left" Margin="565,90,0,0" VerticalAlignment="Top" Width="25" Height="33" RenderTransformOrigin="1.349,0.569" Click="listarCursos"/>
+        <Button x:Name="button_buscar_funcionario" Content="OK" HorizontalAlignment="Left" Margin="865,84,0,0" VerticalAlignment="Top" Width="25" Height="33" RenderTransformOrigin="1.349,0.569" Click="listarDados"/>
+        <Button x:Name="button_encerrar" Content="Encerrar Contrato" HorizontalAlignment="Left" Margin="1003,302,0,0" VerticalAlignment="Top" Width="106" Height="33" Click="encerrarContrato"/>
         <TextBlock x:Name="texto_funcionario" HorizontalAlignment="Left" Height="43" Margin="500,10,0,0" TextWrapping="Wrap" Text="FUNCIONÁRIO" VerticalAlignment="Top" Width="249" FontStyle="Normal" FontWeight="ExtraBold" FontSize="32"/>
 
     </Grid>
