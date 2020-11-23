@@ -1,41 +1,71 @@
 ﻿<Page x:Class="WPF_Trabalho.Funcionario_Page"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:WPF_Trabalho"
-      mc:Ignorable="d" 
+      mc:Ignorable="d"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Funcionario_Window" Height="450" Width="1197.91" Background="White">
     <Grid>
-        <Button x:Name="button_criar" Content="Novo Funcionário" HorizontalAlignment="Left" Margin="99,302,0,0" VerticalAlignment="Top" Width="106" Height="33" Click="criarFuncionario"/>
-        <TextBox x:Name="input_Nome_Funcionario" HorizontalAlignment="Left" Height="29" Margin="142,114,0,0" TextWrapping="Wrap" Text="Nome_Funcionário" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325"/>
-        <Label x:Name="label_nomeFuncionario" Content="Nome do Funcionário:" HorizontalAlignment="Left" Height="29" Margin="10,114,0,0" VerticalAlignment="Top" Width="132"/>
-        <TextBox x:Name="input_Data_Admissao" HorizontalAlignment="Left" Height="29" Margin="142,152,0,0" TextWrapping="Wrap" Text="Data_Admissao" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325"/>
-        <Label x:Name="label_dataAdmissao" Content="Data de Admissão:" HorizontalAlignment="Left" Height="29" Margin="10,152,0,0" VerticalAlignment="Top" Width="132"/>
-        <TextBox x:Name="input_Cargo" HorizontalAlignment="Left" Height="29" Margin="142,186,0,0" TextWrapping="Wrap" Text="Cargo" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325"/>
-        <Label x:Name="label_cargo" Content="Cargo:" HorizontalAlignment="Left" Height="29" Margin="10,186,0,0" VerticalAlignment="Top" Width="132"/>
-        <TextBox x:Name="input_Setor" HorizontalAlignment="Left" Height="29" Margin="142,220,0,0" TextWrapping="Wrap" Text="Setor" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325"/>
-        <Label x:Name="label_setor" Content="Setor:" HorizontalAlignment="Left" Height="29" Margin="10,220,0,0" VerticalAlignment="Top" Width="132"/>
-        <TextBox x:Name="input_Data_Recisao" HorizontalAlignment="Left" Height="29" Margin="142,254,0,0" TextWrapping="Wrap" Text="Data_Recisao" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325"/>
-        <Label x:Name="label_dataRecisao" Content="Data de Recisão:" HorizontalAlignment="Left" Height="29" Margin="10,254,0,0" VerticalAlignment="Top" Width="132"/>
-        <GridSplitter HorizontalAlignment="Left" Height="283" Margin="328,76,0,0" VerticalAlignment="Top" Width="1" Background="#FF030303" BorderBrush="Black"/>
-        <ListBox x:Name="lista_Cursos" HorizontalAlignment="Left" Height="192" Margin="365,152,0,0" VerticalAlignment="Top" Width="200" BorderBrush="#FF111112"/>
-        <Label x:Name="label_listaCursos" Content="Lista de cursos realizados" HorizontalAlignment="Left" Height="29" Margin="362,124,0,0" VerticalAlignment="Top" Width="154"/>
-        <Label x:Name="label_Funcionario_cursos" Content="Funcionário:" HorizontalAlignment="Left" Height="29" Margin="342,90,0,0" VerticalAlignment="Top" Width="83" RenderTransformOrigin="0.43,-0.267"/>
-        <ComboBox x:Name="lista_funcionarios_cursos" HorizontalAlignment="Left" Margin="425,95,0,0" VerticalAlignment="Top" Width="120"/>
-        <GridSplitter HorizontalAlignment="Left" Height="283" Margin="619,76,0,0" VerticalAlignment="Top" Width="1" Background="#FF030303" BorderBrush="Black"/>
-        <Label x:Name="label_dadosFuncionario" Content="Dados do funcionário" HorizontalAlignment="Left" Height="29" Margin="657,118,0,0" VerticalAlignment="Top" Width="154"/>
-        <ListBox x:Name="dados_Funcionario" HorizontalAlignment="Left" Height="192" Margin="657,152,0,0" VerticalAlignment="Top" Width="200" BorderBrush="#FF111112"/>
-        <Label x:Name="label_Funcionario_buscar" Content="Funcionário:" HorizontalAlignment="Left" Height="29" Margin="632,85,0,0" VerticalAlignment="Top" Width="83" RenderTransformOrigin="0.43,-0.267"/>
-        <ComboBox x:Name="lista_funcionarios_buscar" HorizontalAlignment="Left" Margin="715,90,0,0" VerticalAlignment="Top" Width="120"/>
-        <GridSplitter HorizontalAlignment="Left" Height="283" Margin="917,76,0,0" VerticalAlignment="Top" Width="1" Background="#FF030303" BorderBrush="Black"/>
-        <Label x:Name="label_Funcionario_encerrar" Content="Funcionário:" HorizontalAlignment="Left" Height="29" Margin="949,181,0,0" VerticalAlignment="Top" Width="83" RenderTransformOrigin="0.43,-0.267"/>
-        <ComboBox x:Name="lista_funcionarios_encerrar" HorizontalAlignment="Left" Margin="1032,186,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button_buscar_curso" Content="OK" HorizontalAlignment="Left" Margin="565,90,0,0" VerticalAlignment="Top" Width="25" Height="33" RenderTransformOrigin="1.349,0.569" Click="listarCursos"/>
-        <Button x:Name="button_buscar_funcionario" Content="OK" HorizontalAlignment="Left" Margin="865,84,0,0" VerticalAlignment="Top" Width="25" Height="33" RenderTransformOrigin="1.349,0.569" Click="listarDados"/>
-        <Button x:Name="button_encerrar" Content="Encerrar Contrato" HorizontalAlignment="Left" Margin="1003,302,0,0" VerticalAlignment="Top" Width="106" Height="33" Click="encerrarContrato"/>
-        <TextBlock x:Name="texto_funcionario" HorizontalAlignment="Left" Height="43" Margin="500,10,0,0" TextWrapping="Wrap" Text="FUNCIONÁRIO" VerticalAlignment="Top" Width="249" FontStyle="Normal" FontWeight="ExtraBold" FontSize="32"/>
+        <Button x:Name="button_criar" Content="Novo Funcionário" HorizontalAlignment="Left" Margin="99,302,0,0"
+                VerticalAlignment="Top" Width="106" Height="33" Click="CreateEmployee" />
+        <TextBox x:Name="input_Nome_Funcionario" HorizontalAlignment="Left" Height="29" Margin="142,114,0,0"
+                 TextWrapping="Wrap" Text="Nome_Funcionário" VerticalAlignment="Top" Width="132"
+                 BorderBrush="#FF222325" />
+        <Label x:Name="label_nomeFuncionario" Content="Nome do Funcionário:" HorizontalAlignment="Left" Height="29"
+               Margin="10,114,0,0" VerticalAlignment="Top" Width="132" />
+        <TextBox x:Name="input_Data_Admissao" HorizontalAlignment="Left" Height="29" Margin="142,152,0,0"
+                 TextWrapping="Wrap" Text="Data_Admissao" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325" />
+        <Label x:Name="label_dataAdmissao" Content="Data de Admissão:" HorizontalAlignment="Left" Height="29"
+               Margin="10,152,0,0" VerticalAlignment="Top" Width="132" />
+        <TextBox x:Name="input_Cargo" HorizontalAlignment="Left" Height="29" Margin="142,186,0,0" TextWrapping="Wrap"
+                 Text="Cargo" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325" />
+        <Label x:Name="label_cargo" Content="Cargo:" HorizontalAlignment="Left" Height="29" Margin="10,186,0,0"
+               VerticalAlignment="Top" Width="132" />
+        <TextBox x:Name="input_Setor" HorizontalAlignment="Left" Height="29" Margin="142,220,0,0" TextWrapping="Wrap"
+                 Text="Setor" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325" />
+        <Label x:Name="label_setor" Content="Setor:" HorizontalAlignment="Left" Height="29" Margin="10,220,0,0"
+               VerticalAlignment="Top" Width="132" />
+        <TextBox x:Name="input_Data_Recisao" HorizontalAlignment="Left" Height="29" Margin="142,254,0,0"
+                 TextWrapping="Wrap" Text="Data_Recisao" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325" />
+        <Label x:Name="label_dataRecisao" Content="Data de Recisão:" HorizontalAlignment="Left" Height="29"
+               Margin="10,254,0,0" VerticalAlignment="Top" Width="132" />
+        <GridSplitter HorizontalAlignment="Left" Height="283" Margin="328,76,0,0" VerticalAlignment="Top" Width="1"
+                      Background="#FF030303" BorderBrush="Black" />
+        <ListBox x:Name="lista_Cursos" HorizontalAlignment="Left" Height="192" Margin="365,152,0,0"
+                 VerticalAlignment="Top" Width="200" BorderBrush="#FF111112" />
+        <Label x:Name="label_listaCursos" Content="Lista de cursos realizados" HorizontalAlignment="Left" Height="29"
+               Margin="362,124,0,0" VerticalAlignment="Top" Width="154" />
+        <Label x:Name="label_Funcionario_cursos" Content="Funcionário:" HorizontalAlignment="Left" Height="29"
+               Margin="342,90,0,0" VerticalAlignment="Top" Width="83" RenderTransformOrigin="0.43,-0.267" />
+        <ComboBox x:Name="lista_funcionarios_cursos" HorizontalAlignment="Left" Margin="425,95,0,0"
+                  VerticalAlignment="Top" Width="120" DisplayMemberPath="Name" />
+        <GridSplitter HorizontalAlignment="Left" Height="283" Margin="619,76,0,0" VerticalAlignment="Top" Width="1"
+                      Background="#FF030303" BorderBrush="Black" />
+        <Label x:Name="label_dadosFuncionario" Content="Dados do funcionário" HorizontalAlignment="Left" Height="29"
+               Margin="657,118,0,0" VerticalAlignment="Top" Width="154" />
+        <ListBox x:Name="dados_Funcionario" HorizontalAlignment="Left" Height="192" Margin="657,152,0,0"
+                 VerticalAlignment="Top" Width="200" BorderBrush="#FF111112" />
+        <Label x:Name="label_Funcionario_buscar" Content="Funcionário:" HorizontalAlignment="Left" Height="29"
+               Margin="632,85,0,0" VerticalAlignment="Top" Width="83" RenderTransformOrigin="0.43,-0.267" />
+        <ComboBox x:Name="lista_funcionarios_buscar" DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="715,90,0,0"
+                  VerticalAlignment="Top" Width="120" />
+        <GridSplitter HorizontalAlignment="Left" Height="283" Margin="917,76,0,0" VerticalAlignment="Top" Width="1"
+                      Background="#FF030303" BorderBrush="Black" />
+        <Label x:Name="label_Funcionario_encerrar" Content="Funcionário:" HorizontalAlignment="Left" Height="29"
+               Margin="949,181,0,0" VerticalAlignment="Top" Width="83" RenderTransformOrigin="0.43,-0.267" />
+        <ComboBox x:Name="lista_funcionarios_encerrar" DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="1032,186,0,0"
+                  VerticalAlignment="Top" Width="120" />
+        <Button x:Name="button_buscar_curso" Content="OK" HorizontalAlignment="Left" Margin="565,90,0,0"
+                VerticalAlignment="Top" Width="25" Height="33" RenderTransformOrigin="1.349,0.569" Click="ListCourses" />
+        <Button x:Name="button_buscar_funcionario" Content="OK" HorizontalAlignment="Left" Margin="865,84,0,0"
+                VerticalAlignment="Top" Width="25" Height="33" RenderTransformOrigin="1.349,0.569" Click="ListInfo" />
+        <Button x:Name="button_encerrar" Content="Encerrar Contrato" HorizontalAlignment="Left" Margin="1003,302,0,0"
+                VerticalAlignment="Top" Width="106" Height="33" Click="Fire" />
+        <TextBlock x:Name="texto_funcionario" HorizontalAlignment="Left" Height="43" Margin="500,10,0,0"
+                   TextWrapping="Wrap" Text="FUNCIONÁRIO" VerticalAlignment="Top" Width="249" FontStyle="Normal"
+                   FontWeight="ExtraBold" FontSize="32" />
 
     </Grid>
 </Page>
