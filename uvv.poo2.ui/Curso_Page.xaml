@@ -14,7 +14,7 @@
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
         <Frame x:Name="Curso" Background="White"></Frame>
-        <Button x:Name="button_criar" Content="Criar Curso" HorizontalAlignment="Left" Margin="99,302,0,0" VerticalAlignment="Top" Width="106" Height="33" Click="criarCurso"/>
+        <Button x:Name="button_criar" Content="Criar Curso" HorizontalAlignment="Left" Margin="99,302,0,0" VerticalAlignment="Top" Width="106" Height="33" Click="CreateCourse"/>
         <TextBlock x:Name="texto_curso" HorizontalAlignment="Left" Height="43" Margin="441,10,0,0" TextWrapping="Wrap" Text="CURSO" VerticalAlignment="Top" Width="123" FontStyle="Normal" FontWeight="ExtraBold" FontSize="32" RenderTransformOrigin="0.201,0.517"/>
         <TextBox x:Name="input_Nome_Curso" HorizontalAlignment="Left" Height="29" Margin="142,114,0,0" TextWrapping="Wrap" Text="Nome_Curso" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325"/>
         <Label x:Name="label_nomeCurso" Content="Nome do Curso:" HorizontalAlignment="Left" Height="29" Margin="10,114,0,0" VerticalAlignment="Top" Width="132"/>
@@ -24,7 +24,7 @@
         <Label x:Name="label_cargaHoraria" Content="Carga Hor. do Curso:" HorizontalAlignment="Left" Height="29" Margin="10,186,0,0" VerticalAlignment="Top" Width="132"/>
         <GridSplitter HorizontalAlignment="Left" Height="283" Margin="335,77,0,0" VerticalAlignment="Top" Width="1" Background="#FF030303" BorderBrush="Black"/>
         <Label x:Name="label_Curso_update" Content="Curso" HorizontalAlignment="Left" Height="29" Margin="368,103,0,0" VerticalAlignment="Top" Width="132"/>
-        <Button x:Name="button_update" Content="Atualizar Curso" HorizontalAlignment="Left" Margin="458,302,0,0" VerticalAlignment="Top" Width="106" Height="33" Click="atualizarCurso"/>
+        <Button x:Name="button_update" Content="Atualizar Curso" HorizontalAlignment="Left" Margin="458,302,0,0" VerticalAlignment="Top" Width="106" Height="33" Click="UpdateCourse"/>
         <TextBox x:Name="input_Nome_Curso_update" HorizontalAlignment="Left" Height="29" Margin="501,163,0,0" TextWrapping="Wrap" Text="Nome_Curso" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325"/>
         <Label x:Name="label_nomeCurso_update" Content="Nome do Curso:" HorizontalAlignment="Left" Height="29" Margin="368,163,0,0" VerticalAlignment="Top" Width="132"/>
         <TextBox x:Name="input_Ementa_Curso_update" HorizontalAlignment="Left" Height="29" Margin="501,201,0,0" TextWrapping="Wrap" Text="Ementa_Curso" VerticalAlignment="Top" Width="132" BorderBrush="#FF222325"/>
@@ -33,9 +33,9 @@
         <Label x:Name="label_cargaHoraria_update" Content="Carga Hor. do Curso:" HorizontalAlignment="Left" Height="29" Margin="368,235,0,0" VerticalAlignment="Top" Width="132"/>
         <GridSplitter HorizontalAlignment="Left" Height="283" Margin="666,77,0,0" VerticalAlignment="Top" Width="1" Background="#FF030303" BorderBrush="Black"/>
         <Label x:Name="label_Curso_delete" Content="Código do Curso" HorizontalAlignment="Left" Height="29" Margin="689,107,0,0" VerticalAlignment="Top" Width="132"/>
-        <Button x:Name="button_delete" Content="Deletar Curso" HorizontalAlignment="Left" Margin="788,302,0,0" VerticalAlignment="Top" Width="106" Height="33" Click="deletarCurso"/>
-        <ComboBox x:Name="lista_cursos_update" HorizontalAlignment="Left" Margin="505,114,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="lista_cursos_delete" HorizontalAlignment="Left" Margin="826,107,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button_delete" Content="Deletar Curso" HorizontalAlignment="Left" Margin="788,302,0,0" VerticalAlignment="Top" Width="106" Height="33" Click="DeleteCourse"/>
+        <ComboBox x:Name="lista_cursos_update" DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="505,114,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="lista_cursos_delete" DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="826,107,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Page>

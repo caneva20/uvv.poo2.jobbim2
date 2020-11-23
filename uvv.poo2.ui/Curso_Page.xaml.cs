@@ -1,53 +1,77 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net.Http;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using ajj;
 
-namespace WPF_Trabalho
-{
+namespace WPF_Trabalho {
     /// <summary>
     /// Interação lógica para Curso_Page.xam
     /// </summary>
-    public partial class Curso_Page : Page
-    {
-        string strNomeCurso;
-        string strEmentaCurso;
-        string strCargaHoraria;
-        public Curso_Page()
-        {
+    public partial class Curso_Page : Page {
+        private readonly CourseClient _client;
+
+        public Curso_Page() {
             InitializeComponent();
+
+            _client = new CourseClient(new HttpClient());
+
+            LoadCourses();
         }
 
-        private void criarCurso(object sender, RoutedEventArgs e)
-        {
-            strNomeCurso = input_Nome_Curso.Text;
-            strEmentaCurso = input_Ementa_Curso.Text;
-            strCargaHoraria = input_CargaHor_Curso.Text;
+        private async void LoadCourses() {
+            lista_cursos_update.Items.Clear();
+            lista_cursos_delete.Items.Clear();
+
+            foreach (var course in await _client.GetAllAsync()) {
+                lista_cursos_update.Items.Add(course);
+                lista_cursos_delete.Items.Add(course);
+            }
         }
 
-        private void atualizarCurso(object sender, RoutedEventArgs e)
-        {
-            ComboBoxItem typeItem = (ComboBoxItem)lista_cursos_update.SelectedItem;
-            string value = typeItem.Content.ToString();
-            strNomeCurso = input_Nome_Curso_update.Text;
-            strEmentaCurso = input_Ementa_Curso_update.Text;
-            strCargaHoraria = input_CargaHor_Curso_update.Text;
+        private async void CreateCourse(object sender, RoutedEventArgs e) {
+            var name = input_Nome_Curso.Text;
+            var program = input_Ementa_Curso.Text;
+            
+            if (!int.TryParse(input_CargaHor_Curso_update.Text, out var workload)) {
+                workload = 0;
+            }
+
+            await _client.CreateAsync(new CourseDto {
+                Name = name,
+                Program = program,
+                Workload = workload
+            });
+
+            LoadCourses();
         }
 
-        private void deletarCurso(object sender, RoutedEventArgs e)
-        {
-            ComboBoxItem typeItem = (ComboBoxItem)lista_cursos_delete.SelectedItem;
-            string value = typeItem.Content.ToString();
+        private async void UpdateCourse(object sender, RoutedEventArgs e) {
+            var course = (Course) lista_cursos_update.SelectedItem;
+
+            var name = input_Nome_Curso_update.Text;
+            var program = input_Ementa_Curso_update.Text;
+            
+            if (!int.TryParse(input_CargaHor_Curso_update.Text, out var workload)) {
+                workload = 0;
+            }
+
+            await _client.UpdateAsync(course.Id, new CourseDto {
+                Name = name,
+                Program = program,
+                Workload = workload
+            });
+
+            LoadCourses();
+        }
+
+        private void DeleteCourse(object sender, RoutedEventArgs e) {
+            var course = (Course) lista_cursos_delete.SelectedItem;
+
+            _client.DeleteAsync(course.Id);
+
+            lista_cursos_update.Items.Remove(course);
+            lista_cursos_delete.Items.Remove(course);
         }
     }
 }
