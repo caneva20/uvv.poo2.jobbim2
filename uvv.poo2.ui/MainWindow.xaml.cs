@@ -37,7 +37,7 @@ namespace WPF_Trabalho
 
         private void BtnClickOferta(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Oferta_Page();
+            Main.Content = new OfferPage();
         }
 
         private void BtnClickFuncionario(object sender, RoutedEventArgs e)

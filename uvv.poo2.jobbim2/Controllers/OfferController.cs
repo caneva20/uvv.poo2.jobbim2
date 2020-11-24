@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using ajj.Data;
 using ajj.DTOs;
@@ -16,6 +15,20 @@ namespace ajj.Controllers {
             _context = context;
         }
 
+        [HttpGet]
+        public ActionResult<IEnumerable<Offer>> GetOffers() {
+            var courses = _context.Courses.ToList();
+
+            var offers = new List<Offer>();
+
+            foreach (var course in courses) {
+                offers.AddRange(_context.Offers.Where(x => x.Course == course)
+                   .ToList());
+            }
+
+            return offers;
+        }
+        
         [HttpGet("{courseId}")]
         public ActionResult<IEnumerable<Offer>> GetOffers(long courseId) {
             var course = _context.Courses.SingleOrDefault(x => x.Id == courseId);
