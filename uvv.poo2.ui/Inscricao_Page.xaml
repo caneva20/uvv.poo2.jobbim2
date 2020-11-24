@@ -9,7 +9,7 @@
       Title="Inscricao_Page" Height="450" Width="698.714">
     <Grid Background="White">
         <Button x:Name="button_criar" Content="Criar Inscrição" HorizontalAlignment="Left" Margin="121,207,0,0"
-                VerticalAlignment="Top" Width="106" Height="33" Click="criarInscricao" />
+                VerticalAlignment="Top" Width="106" Height="33" Click="CreateSubscription" />
         <TextBlock x:Name="texto_inscricao" HorizontalAlignment="Left" Height="43" Margin="246,10,0,0"
                    TextWrapping="Wrap" Text="INSCRIÇÃO" VerticalAlignment="Top" Width="185" FontStyle="Normal"
                    FontWeight="ExtraBold" FontSize="32" />
@@ -18,16 +18,16 @@
         <Label x:Name="label_codCurso" Content="Curso" HorizontalAlignment="Left" Height="29" Margin="66,97,0,0"
                VerticalAlignment="Top" Width="89" />
         <Button x:Name="button_cancelar" Content="Cancelar Inscrição" HorizontalAlignment="Left" Margin="433,207,0,0"
-                VerticalAlignment="Top" Width="106" Height="33" IsCancel="True" Click="cancelarInscricao" />
+                VerticalAlignment="Top" Width="106" Height="33" IsCancel="True" Click="CancelSubscription" />
         <Label x:Name="label_codInscricao" Content="Inscrição" HorizontalAlignment="Left" Height="29"
                Margin="358,90,0,0" VerticalAlignment="Top" Width="132" />
         <GridSplitter HorizontalAlignment="Left" Height="283" Margin="342,75,0,0" VerticalAlignment="Top" Width="1"
                       Background="#FF030303" BorderBrush="Black" />
-        <ComboBox x:Name="lista_cursos" HorizontalAlignment="Left" Margin="184,97,0,0" VerticalAlignment="Top"
+        <ComboBox x:Name="lista_cursos" DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="184,97,0,0" VerticalAlignment="Top"
                   Width="120" />
-        <ComboBox x:Name="lista_funcionarios" HorizontalAlignment="Left" Margin="184,137,0,0" VerticalAlignment="Top"
+        <ComboBox x:Name="lista_funcionarios" DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="184,137,0,0" VerticalAlignment="Top"
                   Width="120" />
-        <ComboBox x:Name="lista_inscricao" HorizontalAlignment="Left" Margin="452,90,0,0" VerticalAlignment="Top"
+        <ComboBox x:Name="lista_inscricao" DisplayMemberPath="Employee.Name" HorizontalAlignment="Left" Margin="452,90,0,0" VerticalAlignment="Top"
                   Width="120" />
 
     </Grid>

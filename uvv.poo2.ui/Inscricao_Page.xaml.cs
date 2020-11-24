@@ -1,18 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using ajj;
 
 namespace WPF_Trabalho {
@@ -20,28 +9,56 @@ namespace WPF_Trabalho {
     /// Interação lógica para Inscricao_Page.xam
     /// </summary>
     public partial class Inscricao_Page : Page {
-        private readonly EmployeeClient _client;
+        private readonly CourseClient _courseClient;
+        private readonly EmployeeClient _employeeClient;
+        private readonly SubscriptionClient _subscriptionClient;
         
         public Inscricao_Page() {
             InitializeComponent();
             
-            _client = new EmployeeClient(new HttpClient());
+            _courseClient = new CourseClient(new HttpClient());
+            _employeeClient = new EmployeeClient(new HttpClient());
+            _subscriptionClient = new SubscriptionClient(new HttpClient());
+
+            Load();
         }
 
-        private async void criarInscricao(object sender, RoutedEventArgs e) {
-            ComboBoxItem typeItemCurso = (ComboBoxItem) lista_cursos.SelectedItem;
-            ComboBoxItem typeItemFuncionario = (ComboBoxItem) lista_funcionarios.SelectedItem;
-            string curso = typeItemCurso.Content.ToString();
-            string funcionario = typeItemFuncionario.Content.ToString();
+        private async void Load() {
+            lista_cursos.Items.Clear();
+            lista_funcionarios.Items.Clear();
+            lista_inscricao.Items.Clear();
 
-            foreach (var employee in await _client.GetEmployeesAsync()) {
-                lista_cursos.Items.Add(employee);
+            foreach (var course in await _courseClient.GetAllAsync()) {
+                lista_cursos.Items.Add(course);
+            }
+            
+            foreach (var employee in await _employeeClient.GetEmployeesAsync()) {
+                lista_funcionarios.Items.Add(employee);
+            }
+
+            foreach (var subscription in await _subscriptionClient.GetSubscriptionsAsync()) {
+                lista_inscricao.Items.Add(subscription);
             }
         }
 
-        private void cancelarInscricao(object sender, RoutedEventArgs e) {
-            ComboBoxItem typeItem = (ComboBoxItem) lista_inscricao.SelectedItem;
-            string value = typeItem.Content.ToString();
+        private async void CreateSubscription(object sender, RoutedEventArgs e) {
+            var course = (Course) lista_cursos.SelectedItem;
+            var employee = (Employee) lista_funcionarios.SelectedItem;
+
+            await _subscriptionClient.CreateSubscriptionAsync(new SubscriptionDTO() {
+                CourseId = course.Id,
+                EmployeeId = employee.Id,
+                Date = DateTimeOffset.Now,
+                Status = true,
+            });
+        }
+
+        private void CancelSubscription(object sender, RoutedEventArgs e) {
+            var subscription = (Subscription) lista_inscricao.SelectedItem;
+
+            _subscriptionClient.UpdateStatusAsync(subscription.Id, new SubscriptionStatusDTO() {
+                Status = false,
+            });
         }
     }
 }
